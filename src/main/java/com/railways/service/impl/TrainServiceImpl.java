@@ -67,7 +67,7 @@ public class TrainServiceImpl implements TrainService {
 		for(com.railways.entity.Train platform : entites) {
 			pojos.add(new Train(platform.getID(),platform.getTrainNo(),platform.getSource(),platform.getDestination(),platform.getGen(),platform.getTaq(),platform.getLad(),platform.getTotalSeats()));
 		}
-		//changes
+		//changes check
 		return pojos;
 	}
 	
