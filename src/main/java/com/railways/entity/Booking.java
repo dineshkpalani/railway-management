@@ -31,6 +31,7 @@ public class Booking {
 //	}
 
 	// cloud changes
+	// cloud2
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
