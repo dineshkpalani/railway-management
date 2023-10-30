@@ -30,6 +30,8 @@ public class Booking {
 //		this.destination = destination;
 //	}
 
+	// cloud changes
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
