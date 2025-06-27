@@ -35,3 +35,90 @@ YYYY
 :71A:SHA
 :72:/INS/1495779073
 -}{5:{CHK:CA9BBD33114C}{TNG:}}
+
+
+
+To achieve the desired changes in the ORGMSG field, where:
+ * For the :50A: field, the second line of content (e.g., SCBLAEA0) should be replaced with YYYY, while the first line remains.
+ * For the :59: field, the second and third lines of content (e.g., AVAPPG SFOCRI and OSAMA BIN LADEN) should be replaced with YYYY, while the first line remains.
+You need to adjust both REGEXP_REPLACE functions in your query to use more precise regular expressions with capturing groups. This allows you to select specific parts of the matched text to preserve and other parts to replace.
+Here's the corrected SQL query:
+SELECT
+    TRNREFDT,
+    PRDCD,
+    ENTRYDT,
+    ENTRYTIME,
+    MSGTYPE,
+    REGEXP_REPLACE(
+        REGEXP_REPLACE(
+            ORGMSG,
+            -- Pattern for :50(A|K|F): - Keeps the tag and first line, replaces the second line with 'YYYY'
+            '((:50(A|K|F):))' ||                                    -- Group 1: Captures the specific :50A/K/F: tag (e.g., ":50A:")
+            '([^\r\n]*' || CHR(13) || CHR(10) || ')' ||             -- Group 4: Captures the *first* line content after the tag + newline (to be preserved)
+            '([^\r\n]*)([' || CHR(13) || CHR(10) || ']|$)',         -- Group 5: Captures the *second* line content. Group 6: captures its newline or end of string.
+            '\1' ||                                                 -- Reinsert the captured :50A/K/F: tag (from Group 1)
+            '\4' ||                                                 -- Reinsert the captured first line (from Group 4)
+            'YYYY' || '\6'                                          -- Replace the second line content with 'YYYY' and reinsert its original newline/EOL (from Group 6)
+        ),
+        -- Pattern for :59: - Keeps the tag and first line, replaces the second and third lines with 'YYYY'
+        '((:59:)|(:59A:)|(:59F:))' ||                           -- Group 1: Captures the specific :59:/A/F: tag
+        '([^\r\n]*' || CHR(13) || CHR(10) || ')' ||             -- Group 5: Captures the *first* line content after the tag + newline (to be preserved)
+        '([^\r\n]*' || CHR(13) || CHR(10) || ')' ||             -- Group 6: Captures the *second* line content + newline (to be replaced)
+        '([^\r\n]*)([' || CHR(13) || CHR(10) || ']|$)',         -- Group 7: Captures the *third* line content. Group 8: captures its newline or end of string.
+        '\1' ||                                                 -- Reinsert the captured :59:/A/F: tag (from Group 1)
+        '\5' ||                                                 -- Reinsert the captured first line (from Group 5)
+        'YYYY' || CHR(13) || CHR(10) ||                         -- Replace the second line content with 'YYYY' and explicitly add a newline
+        'YYYY' || '\8'                                          -- Replace the third line content with 'YYYY' and reinsert its original newline/EOL (from Group 8)
+    ) AS ORGMSG,
+    CUTOFFTIME,
+    STATUS,
+    MSID,
+    MSGID,
+    ENDTIME,
+    ISCHKED,
+    STARTTIME,
+    RECBICCODE,
+    SCRATCHPAD,
+    REQUESTDATE,
+    REQUESTTIME,
+    REQUESTXML,
+    RESPONSEDATE,
+    RESPONSETIME,
+    RESPONSEXML,
+    STPSTATUS,
+    TRNREFNO
+FROM
+    DB2INST1.MITTSWIFT
+WHERE
+    MSID IN (SELECT MSID FROM DB2INST1.MITT WHERE (ENTRYDT >= '2025-03-01' AND ENTRYDT <= '2025-03-31'))
+    AND msgtype = 'MT103'
+FOR READ ONLY WITH UR;
+
+Key Modifications and Explanation:
+The core change lies in the regular expression patterns and their corresponding replacement strings for both REGEXP_REPLACE calls.
+ * Understanding CHR(13) || CHR(10): This represents a standard Windows-style newline character sequence (\r\n). The patterns use this to identify line breaks.
+ * [^\r\n]*: This part of the regex matches any character that is not a carriage return (\r) or a newline (\n), zero or more times. This effectively captures the content of a single line.
+ * Capturing Groups (...) and Backreferences \N:
+   * Parentheses () create capturing groups, storing the matched text.
+   * \N in the replacement string refers to the content captured by the Nth group.
+Specific Changes in the :50A: REGEXP_REPLACE:
+ * Pattern:
+   * ((:50(A|K|F):)): Group 1 captures the full tag (e.g., :50A:).
+   * ([^\r\n]* || CHR(13) || CHR(10) || ): Group 4 captures the first line's content immediately after the tag, including its newline.
+   * ([^\r\n]*)([' || CHR(13) || CHR(10) || ']|$): Group 5 captures the second line's content. Group 6 captures its trailing newline or the end of the string ($) if it's the last line of the field.
+ * Replacement:
+   * \1: Preserves the original :50A: tag.
+   * \4: Preserves the first line of content.
+   * 'YYYY': Inserts the new 'YYYY' content.
+   * \6: Reinserts the original newline or end-of-string marker, maintaining the structure.
+Specific Changes in the :59: REGEXP_REPLACE:
+ * Pattern:
+   * ((:59:)|(:59A:)|(:59F:)): Group 1 captures the specific :59: tag.
+   * ([^\r\n]* || CHR(13) || CHR(10) || ): Group 5 captures the first line's content after the tag, including its newline.
+   * ([^\r\n]* || CHR(13) || CHR(10) || ): Group 6 captures the second line's content after the tag, including its newline.
+   * ([^\r\n]*)([' || CHR(13) || CHR(10) || ']|$): Group 7 captures the third line's content. Group 8 captures its trailing newline or end of string.
+ * Replacement:
+   * \1: Preserves the original :59: tag.
+   * \5: Preserves the first line of content.
+   * 'YYYY' || CHR(13) || CHR(10): Replaces the second line with 'YYYY' and ensures it ends with a newline.
+   * 'YYYY' || '\8': Replaces the third line with 'YYYY' and reinserts its original newline or end-of-string marker.
