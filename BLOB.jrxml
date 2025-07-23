@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Dymamic Report" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="ecf24941-fcb6-48fd-bd0d-25af90b7dee0">
+	<property name="net.sf.jasperreports.awt.ignore.missing.font" value="true"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="net.sf.jasperreports.export.pdf.encrypted" value="True"/>
+	<property name="net.sf.jasperreports.export.pdf.128.bit.key" value="True"/>
+	<property name="net.sf.jasperreports.export.pdf.permissions.allowed" value="PRINTING"/>
+	<parameter name="Image1" class="java.io.ByteArrayInputStream"/>
+	<parameter name="Image2" class="java.io.ByteArrayInputStream"/>
+	<parameter name="dataSource" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="subReport" class="net.sf.jasperreports.engine.JasperReport"/>
+	<field name="sysRefNb" class="java.lang.String">
+		<fieldDescription><![CDATA[header.sysRefNb]]></fieldDescription>
+	</field>
+	<field name="endToEndId" class="java.lang.String">
+		<fieldDescription><![CDATA[data.pmtId.endToEndId]]></fieldDescription>
+	</field>
+	<field name="prcgDt" class="java.lang.String">
+		<fieldDescription><![CDATA[header.prcgDt]]></fieldDescription>
+	</field>
+	<field name="nm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.nm]]></fieldDescription>
+	</field>
+	<field name="pmtTp" class="java.lang.String">
+		<fieldDescription><![CDATA[header.pmtTp]]></fieldDescription>
+	</field>
+	<field name="instrId" class="java.lang.String">
+		<fieldDescription><![CDATA[data.pmtId.instrId]]></fieldDescription>
+	</field>
+	<field name="valuedate" class="java.lang.String">
+		<fieldDescription><![CDATA[data.sttlmDtTmInf.intrBkSttlmDt]]></fieldDescription>
+	</field>
+	<field name="intrBkSttlmAmtCcy" class="java.lang.String">
+		<fieldDescription><![CDATA[data.amt.intrBkSttlmAmtCcy]]></fieldDescription>
+	</field>
+	<field name="intrBkSttlmAmt" class="java.lang.String">
+		<fieldDescription><![CDATA[header.intrBkSttlmAmt]]></fieldDescription>
+	</field>
+	<field name="clrSysMmbId" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtrAgt.clrSysMmbId]]></fieldDescription>
+	</field>
+	<field name="acctId" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.acctId]]></fieldDescription>
+	</field>
+	<field name="ustrd" class="java.lang.String">
+		<fieldDescription><![CDATA[data.rmtInf.ustrd[0]]]></fieldDescription>
+	</field>
+	<field name="cstmrRate" class="java.lang.String">
+		<fieldDescription><![CDATA[data.xchgRateInf.cstmrRate]]></fieldDescription>
+	</field>
+	<field name="dbtAmt" class="java.lang.String">
+		<fieldDescription><![CDATA[header.dbtAmt]]></fieldDescription>
+	</field>
+	<field name="chrgsInf" class="java.lang.String">
+		<fieldDescription><![CDATA[data.chrgsInf.chrgAcctId]]></fieldDescription>
+	</field>
+	<field name="ttlSCBChrgsAmt" class="java.lang.String">
+		<fieldDescription><![CDATA[header.ttlSCBChrgsAmt]]></fieldDescription>
+	</field>
+	<field name="chrgsTtlTaxAmt" class="java.lang.String">
+		<fieldDescription><![CDATA[header.chrgsTtlTaxAmt]]></fieldDescription>
+	</field>
+	<field name="BICFI" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtrAgt.BICFI]]></fieldDescription>
+	</field>
+	<field name="stdNm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cstmr.stdNm[0].nm]]></fieldDescription>
+	</field>
+	<field name="cstmrNm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cbs.enqryInf.DBIT.cstmrNm]]></fieldDescription>
+	</field>
+	<field name="acctShrtNm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cbs.enqryInf.DBIT.acctShrtNm]]></fieldDescription>
+	</field>
+	<field name="dbtr" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.acctId]]></fieldDescription>
+	</field>
+	<field name="adr[0]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdr.adrLine[0]]]></fieldDescription>
+	</field>
+	<field name="adr[1]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdr.adrLine[1]]]></fieldDescription>
+	</field>
+	<field name="adr[2]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdr.adrLine[2]]]></fieldDescription>
+	</field>
+	<field name="adr[3]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdr.adrLine[3]]]></fieldDescription>
+	</field>
+	<field name="adr[4]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdr.adrLine[4]]]></fieldDescription>
+	</field>
+	<field name="adr[5]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdr.adrLine[5]]]></fieldDescription>
+	</field>
+	<field name="adr[6]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdr.adrLine[6]]]></fieldDescription>
+	</field>
+	<field name="prxyTpCd" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtrAcct.prxyTpCd]]></fieldDescription>
+	</field>
+	<field name="adrLine[0]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdr.adrLine[0]]]></fieldDescription>
+	</field>
+	<field name="dbtrnm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.nm]]></fieldDescription>
+	</field>
+	<field name="dbtSttlmAcct" class="java.lang.String">
+		<fieldDescription><![CDATA[data.txSttlmInf.dbtSttlmAcct[0].virtualAcctId]]></fieldDescription>
+	</field>
+	<field name="adrLine[1]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdr.adrLine[1]]]></fieldDescription>
+	</field>
+	<field name="adrLine[2]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdr.adrLine[2]]]></fieldDescription>
+	</field>
+	<field name="adrLine[3]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdr.adrLine[3]]]></fieldDescription>
+	</field>
+	<field name="adrLine[4]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdr.adrLine[4]]]></fieldDescription>
+	</field>
+	<field name="adrLine[5]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdr.adrLine[5]]]></fieldDescription>
+	</field>
+	<field name="adrLine[6]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdr.adrLine[6]]]></fieldDescription>
+	</field>
+	<field name="dbtrNm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.nm]]></fieldDescription>
+	</field>
+	<field name="cdtrAgtnm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtrAgt.nm]]></fieldDescription>
+	</field>
+	<field name="ctryCd" class="java.lang.String">
+		<fieldDescription><![CDATA[header.ctryCd]]></fieldDescription>
+	</field>
+	<field name="chrgsTtlTaxAmtCcy" class="java.lang.String">
+		<fieldDescription><![CDATA[data.amt.chrgsTtlTaxAmtCcy]]></fieldDescription>
+	</field>
+	<field name="chrgAcctCcy" class="java.lang.String">
+		<fieldDescription><![CDATA[data.chrgsInf.chrgAcctCcy]]></fieldDescription>
+	</field>
+	<field name="aliasMtch" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cbs.enqryInf.DBIT.aliasMtch]]></fieldDescription>
+	</field>
+	<field name="outgngClrRef" class="java.lang.String">
+		<fieldDescription><![CDATA[data.pmtId.outgngClrRef]]></fieldDescription>
+	</field>
+	<field name="UETR" class="java.lang.String">
+		<fieldDescription><![CDATA[header.origAdvUETR]]></fieldDescription>
+	</field>
+	<field name="prxyTpPrtry" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtrAcct.prxyTpPrtry]]></fieldDescription>
+	</field>
+	<field name="IBAN" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtrAcct.IBAN]]></fieldDescription>
+	</field>
+	<field name="cdtrAcctid" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtrAcct.id]]></fieldDescription>
+	</field>
+	<field name="prxyID" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.prxyId]]></fieldDescription>
+	</field>
+	<field name="dbtrAcctid" class="java.lang.String">
+		<fieldDescription><![CDATA[data.txSttlmInf.dbtSttlmAcct[0].acctId]]></fieldDescription>
+	</field>
+	<field name="dbtCcy" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtrAcct.ccy]]></fieldDescription>
+	</field>
+	<field name="upfrntChrgInd" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cstmr.upfrntChrgInd]]></fieldDescription>
+	</field>
+	<field name="chrgAcctId" class="java.lang.String">
+		<fieldDescription><![CDATA[data.chrgsInf.chrgAcctId]]></fieldDescription>
+	</field>
+	<field name="mmid" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.mmid]]></fieldDescription>
+	</field>
+	<field name="pmtPxyTp" class="java.lang.String">
+		<fieldDescription><![CDATA[header.pmtPxyTp]]></fieldDescription>
+	</field>
+	<field name="ustrd[1]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.rmtInf.ustrd[1]]]></fieldDescription>
+	</field>
+	<field name="ustrd[2]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.rmtInf.ustrd[2]]]></fieldDescription>
+	</field>
+	<field name="ustrd[3]" class="java.lang.String">
+		<fieldDescription><![CDATA[data.rmtInf.ustrd[3]]]></fieldDescription>
+	</field>
+	<field name="disclaimer" class="java.lang.String">
+		<fieldDescription><![CDATA[header.disclaimer.debitDslr]]></fieldDescription>
+	</field>
+	<field name="pstlAdrLclLang" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.pstlAdrLclLang]]></fieldDescription>
+	</field>
+	<field name="cdtrNmLclLang" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cdtr.nmLclLang]]></fieldDescription>
+	</field>
+	<field name="ustrdLclLang" class="java.lang.String">
+		<fieldDescription><![CDATA[data.rmtInf.ustrdLclLang]]></fieldDescription>
+	</field>
+	<field name="dbtrNmLclLang" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.nmLclLang]]></fieldDescription>
+	</field>
+	<field name="dbtrPstlAdrLclLang" class="java.lang.String">
+		<fieldDescription><![CDATA[data.dbtr.pstlAdrLclLang]]></fieldDescription>
+	</field>
+	<field name="payeePwdFlag" class="java.lang.String">
+		<fieldDescription><![CDATA[header.payeePwdFlag]]></fieldDescription>
+	</field>
+	<field name="instgChanl" class="java.lang.String">
+		<fieldDescription><![CDATA[header.instgChanl]]></fieldDescription>
+	</field>
+	<field name="instgBtchRef" class="java.lang.String">
+		<fieldDescription><![CDATA[header.instgBtchRef]]></fieldDescription>
+	</field>
+	<field name="txCtry" class="java.lang.String">
+		<fieldDescription><![CDATA[header.txCtry]]></fieldDescription>
+	</field>
+	<field name="reqdPmtTp" class="java.lang.String">
+		<fieldDescription><![CDATA[data.pmtTpInf.reqdPmtTp]]></fieldDescription>
+	</field>
+	<field name="txRcvdDtTm" class="java.lang.String">
+		<fieldDescription><![CDATA[header.txRcvdDtTm]]></fieldDescription>
+	</field>
+	<field name="clrMsgTp" class="java.lang.String">
+		<fieldDescription><![CDATA[header.clrMsgTp]]></fieldDescription>
+	</field>
+	<field name="baseCcy" class="java.lang.String">
+		<fieldDescription><![CDATA[data.amt.baseCcy]]></fieldDescription>
+	</field>
+	<field name="dbtAmtBaseCcyEqvt" class="java.lang.String">
+		<fieldDescription><![CDATA[data.amt.dbtAmtBaseCcyEqvt]]></fieldDescription>
+	</field>
+	<field name="ultmtDbtrnm" class="java.lang.String">
+		<fieldDescription><![CDATA[data.ultmtDbtr.nm]]></fieldDescription>
+	</field>
+	<field name="cdtValDt" class="java.lang.String">
+		<fieldDescription><![CDATA[data.sttlmDtTmInf.cdtValDt]]></fieldDescription>
+	</field>
+	<field name="reqdExctnDt" class="java.lang.String">
+		<fieldDescription><![CDATA[data.sttlmDtTmInf.reqdExctnDt]]></fieldDescription>
+	</field>
+	<field name="debitPwdFlag" class="java.lang.String">
+		<fieldDescription><![CDATA[header.debitPwdFlag]]></fieldDescription>
+	</field>
+	<field name="stsCustId" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cstmr.stsCustId]]></fieldDescription>
+	</field>
+	<field name="dbtValDt" class="java.lang.String">
+		<fieldDescription><![CDATA[data.sttlmDtTmInf.dbtValDt]]></fieldDescription>
+	</field>
+	<field name="mstrNb" class="java.lang.String">
+		<fieldDescription><![CDATA[data.cbs.enqryInf.DBIT.mstrNb]]></fieldDescription>
+	</field>
+	<field name="orgnlDbtCcy" class="java.lang.String">
+		<fieldDescription><![CDATA[data.amt.orgnlDbtCcy]]></fieldDescription>
+	</field>
+	<field name="acctname" class="java.lang.String">
+		<fieldDescription><![CDATA[data.amt.acctname]]></fieldDescription>
+	</field>
+	<title>
+		<band height="90" splitType="Stretch">
+			<staticText>
+				<reportElement x="190" y="50" width="200" height="25" uuid="30dfaef0-8916-42f8-a7af-1bd45b73b2db"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBIT ADVICE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="653" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="180" width="220" height="15" uuid="14c6876a-1f44-46d0-a93d-1b2916edecd0"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[COUNTRY CODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="180" width="220" height="15" uuid="f86fec00-5805-4b93-9fc9-0690fcddac51"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="260" y="180" width="315" height="15" uuid="796b8f04-cccf-4e48-9ac5-6abb885a27da"/>
+				<textFieldExpression><![CDATA[$F{txCtry}!=null&&!$F{txCtry}.isEmpty()?$F{txCtry}:"NA"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="195" width="220" height="15" uuid="73f9b654-f710-42bf-bd93-54d7571c1b3e"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PAYMENT TYPE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="195" width="220" height="15" uuid="d8dc8621-e7e9-4eb1-af8f-e3be7e6fc020"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="260" y="195" width="315" height="15" uuid="395df541-926b-454a-8484-37b07bc3c3a2"/>
+				<textFieldExpression><![CDATA[$F{pmtTp}!=null&&!$F{pmtTp}.isEmpty()?$F{pmtTp}:"NA"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="210" width="220" height="15" uuid="389cc36e-afcd-4333-849f-6dab28d87771"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CURRENCY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="210" width="220" height="15" uuid="c0163988-cf44-4123-ade7-355a3f460c97"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="260" y="210" width="315" height="15" uuid="d2d55716-fc16-425a-a7f5-3422bd9eb97f"/>
+				<textFieldExpression><![CDATA[$F{intrBkSttlmAmtCcy}!=null&&!$F{intrBkSttlmAmtCcy}.isEmpty()?$F{intrBkSttlmAmtCcy}:"NA"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="225" width="220" height="15" uuid="f2ace350-4703-47c1-9253-256a71d8396b"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[VALUE DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="225" width="220" height="15" uuid="65502910-0b33-4f02-9852-7ef2b47fc430"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="260" y="225" width="315" height="15" uuid="615dce49-90d8-46fa-babc-7226558c2962"/>
+				<textFieldExpression><![CDATA[$F{valuedate}==null || $F{valuedate}.isEmpty()?"NA" :(new java.text.SimpleDateFormat("dd-MMM-yyyy").format(new java.text.SimpleDateFormat("yyyy-MM-dd").parse($F{valuedate})))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="0" width="100" height="15" uuid="db548000-3bec-4382-9fc2-7f9de18e9210"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bank Reference]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="5" height="15" uuid="d18959c6-1114-401d-aff6-1ec01c320f41"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="350" y="0" width="230" height="15" uuid="5ca39fc4-fdd6-4c84-9b57-f5dd11f77fef"/>
+				<textFieldExpression><![CDATA[$F{sysRefNb}!=null&&!$F{sysRefNb}.isEmpty()?$F{sysRefNb}:"NA"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="15" width="100" height="15" uuid="8b434c3d-f7bf-4c7f-bef8-aebb1043a0d8"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Customer Referance]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="15" width="5" height="15" uuid="63be7fe0-63fd-4aa5-80fe-6c0bbc50300d"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="350" y="15" width="230" height="15" uuid="0ee328e9-0bba-46e8-ae2a-75bfa96eeb0d"/>
+				<textFieldExpression><![CDATA[$F{endToEndId}!=null&&!$F{endToEndId}.isEmpty()?$F{endToEndId}:"NA"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="145" width="220" height="15" uuid="2b3971cc-e90e-4ebd-8d7c-04cc4172b409"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dear Valued Client,]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="160" width="583" height="15" uuid="0a13fc8e-8dd0-4a7e-8793-989aa5b3a1cb"/>
+				<textFieldExpression><![CDATA["We have initiated the following payment transaction from your account through "+$F{pmtTp}+", details of which are as follows:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="20" height="15" uuid="ce0d3260-d021-4e77-84af-af2864abeaac"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[To,]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="15" width="220" height="15" isRemoveLineWhenBlank="true" uuid="09859089-6c52-4aa4-8122-b7788e4e4323"/>
+				<textFieldExpression><![CDATA[($F{dbtrNm}!=null&&!$F{dbtrNm}.isEmpty())?$F{dbtrNm}:($F{dbtrNmLclLang}!=null&&!$F{dbtrNmLclLang}.isEmpty())?$F{dbtrNmLclLang}:"NA"]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="30" width="220" height="15" isRemoveLineWhenBlank="true" uuid="3c5bb9fd-af3a-4fba-8db6-832f023ac8c0"/>
+				<textFieldExpression><![CDATA[$F{adr[0]}!=null&&!$F{adr[0]}.isEmpty()?$F{adr[0]}:$F{dbtrPstlAdrLclLang}!=null&&!$F{dbtrPstlAdrLclLang}.isEmpty()?$F{dbtrPstlAdrLclLang}:""]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="45" width="220" height="15" isRemoveLineWhenBlank="true" uuid="73d92e71-10d6-46d4-b005-d91681077363"/>
+				<textFieldExpression><![CDATA[$F{adr[1]}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="60" width="220" height="15" isRemoveLineWhenBlank="true" uuid="e55baa13-065c-4fcd-a3eb-8304246bb05d"/>
+				<textFieldExpression><![CDATA[$F{adr[2]}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="75" width="220" height="15" isRemoveLineWhenBlank="true" uuid="2c18e5bd-6151-48cb-a80c-19a7c344ede9"/>
+				<textFieldExpression><![CDATA[$F{adr[3]}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="90" width="220" height="15" isRemoveLineWhenBlank="true" uuid="4b11d68e-d575-485b-873b-31b29e01c97f"/>
+				<textFieldExpression><![CDATA[$F{adr[4]}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="105" width="220" height="15" isRemoveLineWhenBlank="true" uuid="c3f123f2-c5b9-43ac-8be2-c66582875ee8"/>
+				<textFieldExpression><![CDATA[$F{adr[5]}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="120" width="220" height="15" isRemoveLineWhenBlank="true" uuid="a8380a40-3092-448f-be26-a6fa4dec27fd"/>
+				<textFieldExpression><![CDATA[$F{adr[6]}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="30" width="100" height="15" uuid="ddc5aa86-f34d-402b-aa7e-e9aed8a954e4"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Advice Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="30" width="5" height="15" uuid="478a6ae4-d238-4404-8b3c-8eb96556c34a"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="350" y="30" width="230" height="15" uuid="b67db9ec-de96-4ed8-aded-fa2e8fb70f7b"/>
+				<textFieldExpression><![CDATA[$F{prcgDt}==null || $F{prcgDt}.isEmpty()?"NA" :(new java.text.SimpleDateFormat("dd-MMM-yyyy").format(new java.text.SimpleDateFormat("yyyy-MM-dd").parse($F{prcgDt})))]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="135" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="1" width="581" height="15" uuid="ceb2de56-32d2-40fa-9878-0e5a1d9e55fc"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="36" width="581" height="15" uuid="db18aa9e-5db8-4605-aaf1-7820f2e22203"/>
+				<textElement>
+					<font fontName="Serif.ttf" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="500" y="70" width="20" height="15" uuid="1a34a423-05a0-45fd-a5f9-21fc949b0357"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="0" y="30" width="541" height="15" uuid="9602cac8-97b2-461d-8c1b-28b2ad911039"/>
+				<textFieldExpression><![CDATA["(This is a system generated advice and requires no signature.)"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
